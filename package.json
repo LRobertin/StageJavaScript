@@ -1,0 +1,12 @@
+{
+  "name": "stagejavascript",
+  "version": "1.0.0",
+  "description": "Projet effectuer durant le stage à ARCUEIL",
+
+  "scripts": {
+    "start": "npx lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
