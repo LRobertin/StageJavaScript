@@ -1,0 +1,31 @@
+#header-name {
+  color: goldenrod;
+  font-weight: 900;
+  font-size: 32pt;
+  text-shadow: 20px 20px 25px grey;
+  /*text-decoration: underline grey;*/
+  padding-left: 10px;
+}
+
+#dot {
+  color: black;
+}
+
+#js {
+  color: skyblue;
+  font-style: italic;
+}
+/*section footer*/
+footer {
+  text-align: center;
+}
+/*section body*/
+
+body {
+  height: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+article{
+    flex-grow: 1;
+}
