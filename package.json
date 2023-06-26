@@ -2,11 +2,13 @@
   "name": "stagejavascript",
   "version": "1.0.0",
   "description": "Projet effectuer durant le stage à ARCUEIL",
-
   "scripts": {
     "start": "lite-server"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
 }
