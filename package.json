@@ -4,7 +4,7 @@
   "description": "Projet effectuer durant le stage à ARCUEIL",
 
   "scripts": {
-    "start": "npx lite-server"
+    "start": "lite-server"
   },
   "keywords": [],
   "author": "",
