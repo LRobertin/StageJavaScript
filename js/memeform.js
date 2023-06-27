@@ -21,6 +21,7 @@ function initMemeEditor() {
   });
   form["color"].addEventListener("input", function (evt) {
     currentMeme.color = evt.target.value;
+    renderMeme(currentMeme);
   });
   form["font-size"].addEventListener("input", function (evt) {
     currentMeme.fontsize = Number(evt.target.value);
@@ -34,4 +35,11 @@ function initMemeEditor() {
   form["italic"].addEventListener("input", function (evt) {
     currentMeme.italic = evt.target.checked;
   });
+}
+
+function renderMeme(meme) {
+       var svg =  document.querySelector("#editor-viewer svg");
+       var textElement = svg.querySelector('text');
+       textElement.style.fill = meme.color;
+       textElement.style.underline = meme.underline ? "underline" : "none"; 
 }
