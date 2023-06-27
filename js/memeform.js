@@ -55,9 +55,9 @@ function renderMeme(meme) {
   textElement.style.fill = meme.color;
   textElement.innerHTML = meme.text;
   textElement.style.textDecoration = meme.underline ? "underline" : "none";
-  textElement.setAttribute('font-weight', meme.fontweight)
-  textElement.setAttribute('font-size', meme.fontsize)
-  //textElement.setAttribute('font-style', meme.italic)
-  textElement.setAttribute('x', meme.x)
-  textElement.setAttribute('y', meme.y)
+  textElement.setAttribute("font-weight", meme.fontweight);
+  textElement.setAttribute("font-size", meme.fontsize);
+  textElement.setAttribute("font-style", meme.italic ? "italic" : "normal");
+  textElement.setAttribute("x", meme.x);
+  textElement.setAttribute("y", meme.y);
 }
