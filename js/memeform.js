@@ -4,34 +4,34 @@ var currentMeme = new Meme();
 function initMemeEditor() {
   var form = document.forms["meme-form"];
 
-  form["titre"].addEventListener("imput", function (evt) {
+  form["titre"].addEventListener("input", function (evt) {
     currentMeme.titre = evt.target.value;
   });
-  form["imageId"].addEventListener("imput", function (evt) {
+  form["imageId"].addEventListener("input", function (evt) {
     currentMeme.imageId = evt.target.value;
   });
-  form["text"].addEventListener("imput", function (evt) {
+  form["text"].addEventListener("input", function (evt) {
     currentMeme.text = evt.target.value;
   });
-  form["x"].addEventListener("imput", function (evt) {
+  form["x"].addEventListener("input", function (evt) {
     currentMeme.x = Number(evt.target.value);
   });
-  form["y"].addEventListener("imput", function (evt) {
+  form["y"].addEventListener("input", function (evt) {
     currentMeme.y = Number(evt.target.value);
   });
-  form["color"].addEventListener("imput", function (evt) {
+  form["color"].addEventListener("input", function (evt) {
     currentMeme.color = evt.target.value;
   });
-  form["font-size"].addEventListener("imput", function (evt) {
+  form["font-size"].addEventListener("input", function (evt) {
     currentMeme.fontsize = Number(evt.target.value);
   });
-  form["font-weight"].addEventListener("imput", function (evt) {
+  form["font-weight"].addEventListener("input", function (evt) {
     currentMeme.fontweight = Number(evt.target.value);
   });
-  form["underline"].addEventListener("imput", function (evt) {
+  form["underline"].addEventListener("input", function (evt) {
     currentMeme.underline = evt.target.checked;
   });
-  form["italic"].addEventListener("imput", function (evt) {
+  form["italic"].addEventListener("input", function (evt) {
     currentMeme.italic = evt.target.checked;
   });
 }

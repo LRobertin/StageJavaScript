@@ -13,12 +13,14 @@ function init() {
   style.fontStyle = "italic";
   style.backgroundColor = "rgba(128,128,128,0.1)";
   console.log(x);
+
+  initMemeEditor();
 }
 
 document.addEventListener("DOMContentLoaded", function (evt) {
   console.log(evt);
   init();
-  initMemeEditor();
+  
 });
 
 /**
