@@ -4,4 +4,8 @@ function init(){
     x.innerHTML = currentDate
     console.log(x)
 }
-init()
+
+document.addEventListener('DOMContentLoaded', function(evt){
+    console.log(evt)
+    init()
+})
