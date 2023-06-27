@@ -1,4 +1,10 @@
 function init() {
+  document
+    .querySelector("#theme-switch")
+    .addEventListener("change", function (evt) {
+      changeTheme(evt.target.checked);
+    });
+
   var x = document.getElementsByTagName("footer")[0];
   var currentDate = new Date().toISOString();
   var style = x.style;
@@ -22,16 +28,19 @@ document.addEventListener("DOMContentLoaded", function (evt) {
 function changeTheme(isDark) {
   var nav = document.getElementsByTagName("nav")[0];
   var btn = document.getElementById("theme-switch");
+  var txt = document.getElementById("theme-text");
 
   if (isDark) {
     document.body.className = "dark";
     nav.classList.replace("bg-light", "bg-dark");
     nav.classList.replace("navbar-light", "navbar-dark");
     btn.checked = true;
+    txt.textContent = "Dark";
   } else {
     document.body.className = "";
     nav.classList.replace("bg-dark", "bg-light");
     nav.classList.replace("navbar-dark", "navbar-light");
     btn.checked = false;
+    txt.textContent = "Light";
   }
 }
