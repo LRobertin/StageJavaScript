@@ -61,3 +61,23 @@ function renderMeme(meme) {
   textElement.setAttribute("x", meme.x);
   textElement.setAttribute("y", meme.y);
 }
+function loadSelectImages(images) {
+  var select = document.forms["meme-form"]["imageId"];
+  // vidange du select
+  var children = select.children;
+  for (var index = 1; index < children.length; index++) {
+    children[index].remove();
+  }
+
+  var optBase = document.createElement("option");
+  optBase.value = "test";
+  optBase.innerHTML = "test";
+  select.appendChild(optBase);
+
+  images.forEach(function (img) {
+    var opt = optBase.cloneNode(true);
+    opt.value = img.id;
+    opt.innerHTML = img.titre;
+    select.appendChild(opt);
+  });
+}
