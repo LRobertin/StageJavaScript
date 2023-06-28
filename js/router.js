@@ -1,3 +1,5 @@
+import { initHome } from "./js-views/home.js";
+
 /**
  * Variable de config des routes
  */
@@ -5,18 +7,19 @@
 const routeConfig = {
   routes: [
     {
+      path: "/",
+      initialisation: initHome,
+      templateUrl: "/view/home.html",
+    },
+    {
       path: "/thumbnail",
       initialisation: undefined,
       templateUrl: "/view/thumbnail.html",
     },
     {
-      path: "/",
-      initialisation: () => {
-        document.querySelector("#home button").addEventListener("click", () => {
-          alert("clické");
-        });
-      },
-      templateUrl: "/view/home.html",
+      path: "/editor",
+      initialisation: undefined,
+      templateUrl: "/view/editor.html",
     },
     {
       path: "/break",
@@ -39,6 +42,10 @@ class Router {
   get currentRoute() {
     return this.#currentRoute;
   }
+
+  constructor(){
+    
+  }
   /**
    * Manage la route en cours
    */
@@ -54,7 +61,10 @@ class Router {
    * Navigate to
    * @param {string} pathName chemin commencant par
    */
-  changeRoute(pathName) {}
+  changeRoute(pathName) {
+    history.pushState(undefined, undefined, pathName);
+    this.handleRoute();
+  }
   /**
    * initatilise le contenu de templateTewte si non present
    * et declencge le chargement DOM du contenu
@@ -84,9 +94,15 @@ class Router {
       this.#currentRoute.initialisation();
     }
   }
+
+  #initRouterLinks(baseSelector = "body") {
+    const links = document.querySelectorall(baseSelector + "a");
+    links.forEach((link) => {
+      link.addEventListener("click", (evt) => {
+        evt.preventDefault();
+      });
+    });
+  }
 }
 
 export const router = new Router();
-/*router.handleRoute();
-router.changeRoute();
-console.log(router.currentRoute);*/
