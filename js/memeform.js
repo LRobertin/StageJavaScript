@@ -1,7 +1,10 @@
+import { Meme } from "./Meme.js";
+import { images } from "./values.js";
+
 var currentMeme = new Meme();
 //console.log(currentMeme);
 
-function initMemeEditor() {
+export function initMemeEditor() {
   var form = document.forms["meme-form"];
 
   form["titre"].addEventListener("input", function (evt) {
@@ -55,7 +58,7 @@ function renderMeme(meme) {
   var img = images.find(function (img) {
     return img.id === meme.imageId;
   });
-  
+
   svg.setAttribute(
     "viewBox",
     `0 0 ${undefined !== img ? img.w : 500} ${undefined !== img ? img.h : 500}`

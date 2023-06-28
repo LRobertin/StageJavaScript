@@ -4,5 +4,5 @@ var jsonContent =
 
   var jsonContentObject = JSON.parse(jsonContent); 
   //console.log(jsonContentObject)
-  var images = jsonContentObject.images; 
+  export var images = jsonContentObject.images; 
   //console.log(images)
