@@ -43,8 +43,10 @@ class Router {
     return this.#currentRoute;
   }
 
-  constructor(){
-    
+  constructor() {
+    document.addEventListener("DOMContentLoaded", (evt) => {
+      this.#initRouterLinks();
+    });
   }
   /**
    * Manage la route en cours
@@ -90,18 +92,22 @@ class Router {
   #loadCurrentContentDOMContent(domContainerSelector = "article") {
     document.querySelector(domContainerSelector).innerHTML =
       this.#currentRoute.templateText;
+    this.#initRouterLinks(domContainerSelector);
     if (undefined !== this.#currentRoute.initialisation) {
       this.#currentRoute.initialisation();
     }
   }
 
   #initRouterLinks(baseSelector = "body") {
-    const links = document.querySelectorall(baseSelector + "a");
+    const links = document.querySelectorAll(baseSelector + " a");
     links.forEach((link) => {
-      link.addEventListener("click", (evt) => {
-        evt.preventDefault();
-      });
+      link.removeEventListener("click", this.#handleLinkEvent);
+      link.addEventListener("click", this.#handleLinkEvent);
     });
+  }
+  #handleLinkEvent=(evt)=> {
+    evt.preventDefault();
+    this.changeRoute(evt.target.href);
   }
 }
 
