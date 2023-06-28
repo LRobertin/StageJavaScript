@@ -9,7 +9,7 @@ function initMemeEditor() {
     renderMeme();
   });
   form["imageId"].addEventListener("input", function (evt) {
-    currentMeme.imageId = evt.target.value;
+    currentMeme.imageId = Number(evt.target.value);
     renderMeme();
   });
   form["text"].addEventListener("input", function (evt) {
@@ -44,6 +44,7 @@ function initMemeEditor() {
     currentMeme.italic = evt.target.checked;
     renderMeme();
   });
+  loadSelectImages(images);
 }
 
 function renderMeme(meme) {
@@ -52,6 +53,13 @@ function renderMeme(meme) {
   }
   var svg = document.querySelector("#editor-viewer svg");
   var textElement = svg.querySelector("text");
+
+  var imgElement = svg.querySelector("image");
+  var img = images.find(function(img) {
+    return img.id === meme.imageId;
+  })
+  imgElement.setAttribute("xlink:href", img.url);
+
   textElement.style.fill = meme.color;
   textElement.innerHTML = meme.text;
   textElement.style.textDecoration = meme.underline ? "underline" : "none";
@@ -64,10 +72,8 @@ function renderMeme(meme) {
 function loadSelectImages(images) {
   var select = document.forms["meme-form"]["imageId"];
   // vidange du select
-  var children = select.children;
-  for (var index = 1; index < children.length; index++) {
-    children[index].remove();
-  }
+  var children = select.children[0].cloneNode(true);
+  select.innerHTML = "";
 
   var optBase = document.createElement("option");
   optBase.value = "test";

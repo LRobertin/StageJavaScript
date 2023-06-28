@@ -3,6 +3,6 @@ var jsonContent =
 
 
   var jsonContentObject = JSON.parse(jsonContent); 
-  console.log(jsonContentObject)
+  //console.log(jsonContentObject)
   var images = jsonContentObject.images; 
-  console.log(images)
+  //console.log(images)
