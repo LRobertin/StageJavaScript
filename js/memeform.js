@@ -58,7 +58,7 @@ function renderMeme(meme) {
   var img = images.find(function(img) {
     return img.id === meme.imageId;
   })
-  imgElement.setAttribute("xlink:href", img.url);
+  imgElement.setAttribute("xlink:href", undefined != img? img.url:"");
 
   textElement.style.fill = meme.color;
   textElement.innerHTML = meme.text;
@@ -76,8 +76,8 @@ function loadSelectImages(images) {
   select.innerHTML = "";
 
   var optBase = document.createElement("option");
-  optBase.value = "test";
-  optBase.innerHTML = "test";
+  optBase.value = "selectionImage";
+  optBase.innerHTML = "Selectionner une image";
   select.appendChild(optBase);
 
   images.forEach(function (img) {
