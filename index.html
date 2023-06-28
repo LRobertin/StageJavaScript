@@ -28,7 +28,7 @@
     </header>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
       <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">Home</a>
         <button
           class="navbar-toggler d-lg-none"
           type="button"
@@ -43,35 +43,20 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
           <ul class="navbar-nav me-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" href="#" aria-current="page"
-                >Home <span class="visually-hidden">(current)</span></a
+              <a class="nav-link active" href="/thumbnail" aria-current="page"
+                >Thumbnail <span class="visually-hidden">(current)</span></a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="/editor">Nouveau</a>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="dropdownId"
-                data-bs-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >Dropdown</a
-              >
-              <div class="dropdown-menu" aria-labelledby="dropdownId">
-                <a class="dropdown-item" href="#">Action 1</a>
-                <a class="dropdown-item" href="#">Action 2</a>
-              </div>
-            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/break">Template not exist</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/azertyuiop">404</a>
+              </li>
           </ul>
-          <form class="d-flex my-2 my-lg-0">
-            <input
-              class="form-control me-sm-2"
-              type="text"
-              placeholder="Search"
-            />
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
               Search
             </button>
@@ -81,78 +66,6 @@
     </nav>
 
     <article>
-      <div id="editor">
-        <div id="editor-viewer">
-          <svg
-            width="100%"
-            height="100%"
-            viewBox="0 0 1000 1000"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-          >
-            <image
-              xlink:href="https://logowik.com/content/uploads/images/homer-simpson4924.jpg"
-              x="0"
-              y="0"
-            />
-            <text x="10" y="20" font-weight="900" style="text-decoration: underline; fill:aqua"></text>
-          </svg>
-        </div>
-        <div id="editor-form">
-          <form action="#" name="meme-form">
-            <h2>Titre</h2>
-            <input
-              type="text"
-              name="titre"
-              id="meme-titre"
-              placeholder="saisir text"
-            />
-            <hr />
-            <label for="meme-image"><h2>Image</h2></label><br />
-            <select name="imageId" id="meme-image">
-              <option value="-1">aucune image</option>
-            </select>
-            <hr />
-            <h2>text</h2>
-            <input type="text" name="text" id="meme-text" />
-            <div class="flex-col">
-              <div>
-                <label for="meme-x">Champs x</label><br />
-                <input type="number" name="x" id="meme-x" />
-              </div>
-              <div>
-                <label for="meme-y">Champs y</label><br />
-                <input type="number" name="y" id="meme-y" />
-              </div>
-            </div>
-            <hr />
-
-            <h2>Decorations</h2>
-            <label for="colorDec">color</label>
-            <input type="color" name="color" id="colorDec" /> <br />
-            <label for="fontsDec">font-size</label>
-            <input type="number" name="font-size" id="fontsDec" /> <br />
-            <label for="fontwDec">font-weight</label>
-            <input type="number" name="font-weight" id="fontwDec" /> <br />
-            <input type="checkbox" name="underline" id="checkunder" />
-            <label for="checkunder">underline/italic</label>
-            <input type="checkbox" name="italic" id="checkitalic" />
-            <hr />
-            <div class="center">
-              <input
-                class="btn btn-danger"
-                type="reset"
-                id="meme-reset"
-                name="Annule"
-              />
-              <button class="btn btn-primary" type="submit" id="meme-submit">
-                Valider
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
     </article>
     <footer>xCoolT&copy; 2023</footer>
   </body>
