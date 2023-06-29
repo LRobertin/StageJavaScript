@@ -1,5 +1,7 @@
 import { ressource } from "../metier/Ressources.js";
+import { Meme } from "../metier/meme.js";
 let currentMeme;
+let currentImage;
 const VIEW_EDITOR_CSS_SELECTOR = "#editor";
 
 export const initEditor = () => {
@@ -12,11 +14,59 @@ export const initEditor = () => {
   }
 };
 
-const initFormEvent = () => {};
+const initFormEvent = () => {
+    form["titre"].addEventListener("input", function (evt) {
+        currentMeme.titre = evt.target.value;
+        Meme.render(currentMeme, VIEW_EDITOR_CSS_SELECTOR, currentImage();
+      });
+      form["imageId"].addEventListener("input", function (evt) {
+        currentMeme.imageId = Number(evt.target.value);
+        currentImage = ressource.images.find((img=>img.id===currentMeme.imageId))
+        Meme.render(currentMeme, VIEW_EDITOR_CSS_SELECTOR, currentImage)();
+      });
+      form["text"].addEventListener("input", function (evt) {
+        currentMeme.text = evt.target.value;
+        Meme.render(currentMeme, VIEW_EDITOR_CSS_SELECTOR, currentImage)();
+      });
+      form["x"].addEventListener("input", function (evt) {
+        currentMeme.x = Number(evt.target.value);
+        Meme.render(currentMeme, VIEW_EDITOR_CSS_SELECTOR, currentImage)();
+      });
+      form["y"].addEventListener("input", function (evt) {
+        currentMeme.y = Number(evt.target.value);
+        Meme.render(currentMeme, VIEW_EDITOR_CSS_SELECTOR, currentImage)();
+      });
+      form["color"].addEventListener("input", function (evt) {
+        currentMeme.color = evt.target.value;
+        Meme.render(currentMeme, VIEW_EDITOR_CSS_SELECTOR, currentImage)();
+      });
+      form["font-size"].addEventListener("input", function (evt) {
+        currentMeme.fontsize = Number(evt.target.value);
+        Meme.render(currentMeme, VIEW_EDITOR_CSS_SELECTOR, currentImage)();
+      });
+      form["font-weight"].addEventListener("input", function (evt) {
+        currentMeme.fontweight = Number(evt.target.value);
+        Meme.render(currentMeme, VIEW_EDITOR_CSS_SELECTOR, currentImage)();
+      });
+      form["underline"].addEventListener("input", function (evt) {
+        currentMeme.underline = evt.target.checked;
+        Meme.render(currentMeme, VIEW_EDITOR_CSS_SELECTOR, currentImage)();
+      });
+      form["italic"].addEventListener("input", function (evt) {
+        currentMeme.italic = evt.target.checked;
+        Meme.render(currentMeme, VIEW_EDITOR_CSS_SELECTOR, currentImage)();
+      });
+      loadSelectImages(images);
+};
 
 const initFormValues = () => {};
 
-const setCurrentMeme = () => {};
+const setCurrentMeme = (meme) => {
+    currentMeme=meme
+    initFormValues()
+    const img = ressource.images.find((im=>im.id===meme.imageId))
+    Meme.render(meme, VIEW_EDITOR_CSS_SELECTOR,img)
+};
 
 const initSelectImages = () => {
   var select = document.forms["meme-form"]["imageId"];
