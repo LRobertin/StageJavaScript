@@ -220,6 +220,83 @@
       "frameSizeX": 0,
       "frameSizeY": 0,
       "id": 8
+    },
+    {
+      "titre": "what's up!",
+      "text": "what's up!",
+      "x": 600,
+      "y": 700,
+      "imageId": 7,
+      "fontSize": 20,
+      "fontWeight": 500,
+      "italic": false,
+      "color": "#26e119",
+      "fontsize": 50,
+      "id": 9
+    },
+    {
+      "titre": "",
+      "text": "",
+      "x": 0,
+      "y": 20,
+      "imageId": 7,
+      "fontSize": 20,
+      "fontWeight": 500,
+      "italic": false,
+      "color": "#000000",
+      "id": 10
+    },
+    {
+      "titre": "",
+      "text": "",
+      "x": 0,
+      "y": 20,
+      "imageId": 7,
+      "fontSize": 20,
+      "fontWeight": 500,
+      "italic": false,
+      "color": "#000000",
+      "id": 11
+    },
+    {
+      "titre": "",
+      "text": "",
+      "x": 0,
+      "y": 20,
+      "imageId": 7,
+      "fontSize": 20,
+      "fontWeight": 500,
+      "italic": false,
+      "color": "#000000",
+      "id": 12
+    },
+    {
+      "titre": "test",
+      "text": "test",
+      "x": 50,
+      "y": 80,
+      "imageId": 7,
+      "fontSize": 20,
+      "fontWeight": 500,
+      "italic": false,
+      "color": "#000000",
+      "fontsize": 80,
+      "fontweight": 700,
+      "id": 13
+    },
+    {
+      "titre": "test",
+      "text": "test",
+      "x": 600,
+      "y": 700,
+      "imageId": 7,
+      "fontSize": 20,
+      "fontWeight": 500,
+      "italic": false,
+      "color": "#ef0b0b",
+      "fontsize": 50,
+      "fontweight": 600,
+      "id": 14
     }
   ]
 }

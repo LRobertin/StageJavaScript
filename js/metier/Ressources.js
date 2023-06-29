@@ -1,4 +1,5 @@
 import REST_ADR, { RESSOURCE_PATH } from "../constantes.js";
+
 export class Ressources {
   #images = [];
   #memes = [];
@@ -28,7 +29,7 @@ export class Ressources {
       this.#images.splice(0);
       this.#images.push(...array[0]);
       this.#memes.splice(0);
-      this.#memes.push(...array[0]);
+      this.#memes.push(...array[1]);
       this.#isItLoaded = true;
       if (undefined !== callback) {
         callback(this);
