@@ -6,8 +6,9 @@ export const initEditor = () => {
   if (ressource.loaded) {
     initSelectImages();
   } else {
-    ressource.loadRessources();
-    initSelectImages();
+    ressource.loadRessources((res) => {
+      initSelectImages();
+    });
   }
 };
 
@@ -26,7 +27,7 @@ const initSelectImages = () => {
   optBase.innerHTML = "Only text";
   select.appendChild(optBase);
 
-  ressources.images.forEach(function (img) {
+  ressource.images.forEach(function (img) {
     var opt = optBase.cloneNode(true);
     opt.value = img.id;
     opt.innerHTML = img.titre;

@@ -30,7 +30,9 @@ export class Ressources {
       this.#memes.splice(0);
       this.#memes.push(...array[0]);
       this.#isItLoaded = true;
-      callback(this);
+      if (undefined !== callback) {
+        callback(this);
+      }
     });
   }
 }

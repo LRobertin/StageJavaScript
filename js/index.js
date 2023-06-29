@@ -5,4 +5,3 @@ document.addEventListener("DOMContentLoaded", (evt) => {
   router.handleRoute();
   //console.log(router.currentRoute)
 });
-ressource.loadRessources()
