@@ -19,7 +19,7 @@ const routeConfig = {
       templateUrl: "/view/thumbnail.html",
     },
     {
-      path: "/editor",
+      path: /\/editor(\/(?<id>\d*))?/,
       initialisation: initEditor,
       templateUrl: "/view/editor.html",
     },
@@ -41,6 +41,11 @@ export const handleRoute = (params) => {
 
 class Router {
   #currentRoute;
+  #params = {
+    get params() {
+      return this.#params;
+    },
+  };
   get currentRoute() {
     return this.#currentRoute;
   }
@@ -56,9 +61,20 @@ class Router {
   handleRoute() {
     const pathName = location.pathname;
     //console.log(pathName);
-    this.#currentRoute = routeConfig.routes.find(
-      (route) => route.path === pathName
-    );
+    this.#currentRoute = routeConfig.routes.find((route) => {
+      if (route.path instanceof RegExp) {
+        //c'est une regex
+        const regReturn = route.path.exec(pathName);
+        if (null !== regReturn) {
+          // ça a match
+          this.#params = { ...regReturn.groups };
+          return true;
+        } else return false;
+      } else {
+        //c'est une chaine
+        return route.path === pathName;
+      }
+    });
     this.#instanciateRouteTemplate();
   }
   /**
@@ -107,10 +123,10 @@ class Router {
       link.addEventListener("click", this.#handleLinkEvent);
     });
   }
-  #handleLinkEvent=(evt)=> {
+  #handleLinkEvent = (evt) => {
     evt.preventDefault();
     this.changeRoute(evt.target.href);
-  }
+  };
 }
 
 export const router = new Router();
