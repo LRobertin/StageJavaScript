@@ -7,7 +7,7 @@ export class Meme {
   fontSize = 20;
   fontWeight = 500;
   italic = false;
-  color = "000000";
+  color = "#000000";
 
   static render(meme, cssSelector, img){
       const svg = document.querySelector(cssSelector+" svg");

@@ -17,6 +17,7 @@ export const initEditor = () => {
   }
 };
 
+
 const initFormEvent = () => {
   var form = document.forms["meme-form"];
   form["titre"].addEventListener("input", function (evt) {
@@ -71,8 +72,8 @@ const initFormValues = () => {
   form["x"].value = currentMeme.x;
   form["y"].value = currentMeme.y;
   form["imageId"].value = currentMeme.imageId;
-  form["fontSize"].value = currentMeme.fontSize;
-  form["fontWeight"].value = currentMeme.fontWeight;
+  form["font-size"].value = currentMeme.fontSize;
+  form["font-weight"].value = currentMeme.fontWeight;
   form["color"].value = currentMeme.color;
   form["italic"].checked = currentMeme.italic;
   form["underline"].checked = currentMeme.underline;
