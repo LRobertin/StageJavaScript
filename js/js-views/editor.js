@@ -2,7 +2,14 @@ import { ressource } from "../metier/Ressources.js";
 let currentMeme;
 const VIEW_EDITOR_CSS_SELECTOR = "#editor";
 
-export const initEditor = () => {};
+export const initEditor = () => {
+  if (ressource.loaded) {
+    initSelectImages();
+  } else {
+    ressource.loadRessources();
+    initSelectImages();
+  }
+};
 
 const initFormEvent = () => {};
 

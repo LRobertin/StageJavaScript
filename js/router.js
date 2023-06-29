@@ -1,3 +1,4 @@
+import { initEditor } from "./js-views/editor.js";
 import { initHome } from "./js-views/home.js";
 
 /**
@@ -18,7 +19,7 @@ const routeConfig = {
     },
     {
       path: "/editor",
-      initialisation: undefined,
+      initialisation: initEditor,
       templateUrl: "/view/editor.html",
     },
     {
@@ -53,7 +54,7 @@ class Router {
    */
   handleRoute() {
     const pathName = location.pathname;
-    console.log(pathName);
+    //console.log(pathName);
     this.#currentRoute = routeConfig.routes.find(
       (route) => route.path === pathName
     );

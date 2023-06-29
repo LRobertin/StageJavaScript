@@ -12,7 +12,11 @@ export class Ressources {
   get images() {
     return this.#images;
   }
-  loadRessources() {
+  /**
+   *
+   * @param {function} callback
+   */
+  loadRessources(callback) {
     const promiseImage = fetch(REST_ADR + RESSOURCE_PATH.images).then((resp) =>
       resp.json()
     );
@@ -20,12 +24,13 @@ export class Ressources {
       resp.json()
     );
     Promise.all([promiseImage, promiseMemes]).then((array) => {
-      console.log(array);
+      //console.log(array);
       this.#images.splice(0);
       this.#images.push(...array[0]);
       this.#memes.splice(0);
       this.#memes.push(...array[0]);
       this.#isItLoaded = true;
+      callback(this);
     });
   }
 }
