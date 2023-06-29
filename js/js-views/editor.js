@@ -64,7 +64,19 @@ const initFormEvent = () => {
   });
 };
 
-const initFormValues = () => {};
+const initFormValues = () => {
+  const form = document.forms["meme-form"];
+  form["titre"].value = currentMeme.titre;
+  form["text"].value = currentMeme.text;
+  form["x"].value = currentMeme.x;
+  form["y"].value = currentMeme.y;
+  form["imageId"].value = currentMeme.imageId;
+  form["fontSize"].value = currentMeme.fontSize;
+  form["fontWeight"].value = currentMeme.fontWeight;
+  form["color"].value = currentMeme.color;
+  form["italic"].checked = currentMeme.italic;
+  form["underline"].checked = currentMeme.underline;
+};
 
 const setCurrentMeme = (meme) => {
   currentMeme = meme;
